@@ -1,6 +1,5 @@
 import { Amplify, Storage, API } from "aws-amplify";
 import { withAuthenticator, Button } from "@aws-amplify/ui-react";
-// eslint-disable-next-line import/no-unresolved
 import "@aws-amplify/ui-react/styles.css";
 import awsExports from "./aws-exports";
 import { useEffect, useState } from "react";
