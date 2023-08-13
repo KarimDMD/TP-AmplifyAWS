@@ -131,7 +131,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-08-13T13:03:03.815Z",
+      "lastPushTimeStamp": "2023-08-13T15:24:09.299Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storages3tripimages"

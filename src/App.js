@@ -1,5 +1,6 @@
 import { Amplify, Storage, API } from "aws-amplify";
 import { withAuthenticator, Button } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 import awsExports from "./aws-exports";
 import { useEffect, useState } from "react";
 import {
@@ -17,7 +18,6 @@ import {
 } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import { Delete as DeleteIcon } from "@mui/icons-material";
-
 Amplify.configure(awsExports);
 
 const BASE_S3_URL = `https://${awsExports.aws_user_files_s3_bucket}.s3.${awsExports.aws_user_files_s3_bucket_region}.amazonaws.com/private/`;
@@ -35,6 +35,7 @@ const App = ({ signOut, user }) => {
     try {
       const userFiles = await Storage.list("", { level: "private" });
       setS3files(userFiles);
+      console.log(userFiles);
     } catch (error) {
       console.error("Error fetching USER files:", error);
     }
@@ -173,7 +174,7 @@ const App = ({ signOut, user }) => {
 
   return (
     <div>
-      <AppBar position="static" style={styles.pinkAppBar}>
+      <AppBar position="static" style={styles.AppBar}>
         <Toolbar>
           <Typography variant="h6" style={styles.username}>
             {user.attributes.email}
@@ -210,7 +211,6 @@ const App = ({ signOut, user }) => {
               style={{
                 display: "block",
                 margin: "0 auto",
-                marginTop: "16px",
               }}
             >
               {imageButtonText}
@@ -382,7 +382,7 @@ const styles = {
     margin: "16px",
   },
   buttonInverted: {
-    backgroundColor: "pink",
+    backgroundColor: "lightgreen",
     color: "black",
     outline: "none",
     fontSize: "18px",
@@ -401,17 +401,16 @@ const styles = {
   },
   username: {
     marginRight: "16px",
-    color: "#FF1493",
+    color: "white",
   },
   grow: {
     flexGrow: 1,
   },
-  pinkAppBar: {
-    color: "white",
+  AppBar: {
     backgroundColor: "green",
   },
   deleteIcon: {
-    color: "#FF1493",
+    color: "green",
   },
   imagePaper: {
     padding: "16px",
@@ -429,7 +428,7 @@ const styles = {
     flexWrap: "wrap",
   },
   imageCard: {
-    width: "calc(33.33% - 16px)" /* 3 images per row */,
+    width: "calc(33.33% - 16px)",
     margin: "8px",
     padding: "16px",
     backgroundColor: "#f5f5f5",
