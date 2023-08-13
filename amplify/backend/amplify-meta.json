@@ -22,7 +22,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/hosting/amplifyhosting-template.json",
         "logicalId": "hostingamplifyhosting"
       },
-      "lastPushTimeStamp": "2023-08-13T15:45:38.864Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.322Z",
       "output": {},
       "lastPushDirHash": "sglKcclx6XMBtTyGwN3ELZuw41g="
     }
@@ -58,7 +58,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/auth/tpamplifyaws34045890-cloudformation-template.json",
         "logicalId": "authtpamplifyaws34045890"
       },
-      "lastPushTimeStamp": "2023-08-13T15:45:38.875Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.324Z",
       "output": {
         "UserPoolId": "eu-west-3_tnF6gTDVn",
         "AppClientIDWeb": "188pgl92last2ad21mgemp8mkc",
@@ -76,19 +76,19 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2023-08-12T23:26:11.989Z",
+      "lastBuildTimeStamp": "2023-08-13T16:07:00.303Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2023-08-12T23:26:15.167Z",
-      "distZipFilename": "lambdaapi2-5656373171304e4e305a-build.zip",
+      "lastPackageTimeStamp": "2023-08-13T16:07:14.404Z",
+      "distZipFilename": "lambdaapi2-367a45457676506d6947-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-tpamplifyaws-dev-203834-deployment",
-        "s3Key": "amplify-builds/lambdaapi2-5656373171304e4e305a-build.zip"
+        "s3Key": "amplify-builds/lambdaapi2-367a45457676506d6947-build.zip"
       },
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/function/lambdaapi2-cloudformation-template.json",
         "logicalId": "functionlambdaapi2"
       },
-      "lastPushTimeStamp": "2023-08-13T15:45:38.885Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.341Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::886809141882:role/tpamplifyawsLambdaRole39f51415-dev",
         "Region": "eu-west-3",
@@ -96,7 +96,7 @@
         "Name": "lambdaapi2-dev",
         "LambdaExecutionRole": "tpamplifyawsLambdaRole39f51415-dev"
       },
-      "lastPushDirHash": "YrNTwTcFzk2b6AOxUAlkQt/saVQ="
+      "lastPushDirHash": "+8t3XtwIM8MeW3aXe8+Ccuc+jvY="
     }
   },
   "api": {
@@ -117,7 +117,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/api/api2-cloudformation-template.json",
         "logicalId": "apiapi2"
       },
-      "lastPushTimeStamp": "2023-08-13T15:45:38.895Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.351Z",
       "output": {
         "ApiName": "api2",
         "RootUrl": "https://rjltnrrupg.execute-api.eu-west-3.amazonaws.com/dev",
@@ -131,7 +131,7 @@
       "service": "S3",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
-      "lastPushTimeStamp": "2023-08-13T15:45:39.166Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.662Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storages3tripimages"
@@ -149,7 +149,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/storage/dynamocomments-cloudformation-template.json",
         "logicalId": "storagedynamocomments"
       },
-      "lastPushTimeStamp": "2023-08-13T15:45:38.913Z",
+      "lastPushTimeStamp": "2023-08-13T16:32:03.370Z",
       "output": {
         "PartitionKeyName": "id",
         "Region": "eu-west-3",

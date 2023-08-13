@@ -244,7 +244,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-tpamplifyaws-dev-203834-deployment/amplify-cfn-templates/function/lambdaapi2-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-tpamplifyaws-dev-203834-deployment",
-          "s3Key": "amplify-builds/lambdaapi2-5656373171304e4e305a-build.zip",
+          "s3Key": "amplify-builds/lambdaapi2-367a45457676506d6947-build.zip",
           "env": "dev"
         }
       }
