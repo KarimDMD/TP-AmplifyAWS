@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamocomments",
+  "tableName": "dynamocomments",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -1,0 +1,13 @@
+{
+  "resourceName": "s3tripimages",
+  "policyUUID": "f45e0a94",
+  "bucketName": "s3tripimages",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}
