@@ -20,11 +20,10 @@ import Rating from "@mui/material/Rating";
 import { Delete as DeleteIcon } from "@mui/icons-material";
 Amplify.configure(awsExports);
 
-const BASE_S3_URL = `https://${awsExports.aws_user_files_s3_bucket}.s3.${awsExports.aws_user_files_s3_bucket_region}.amazonaws.com/private/`;
+const BASE_S3_URL = `https://${awsExports.aws_user_files_s3_bucket}.s3.${awsExports.aws_user_files_s3_bucket_region}.amazonaws.com/private/eu-west-3%3Acbac72c4-89aa-456c-ab64-e713b9951a58/`;
 
 const App = ({ signOut, user }) => {
   // IMAGES
-
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [s3files, setS3files] = useState(null);
@@ -35,7 +34,6 @@ const App = ({ signOut, user }) => {
     try {
       const userFiles = await Storage.list("", { level: "private" });
       setS3files(userFiles);
-      console.log(userFiles);
     } catch (error) {
       console.error("Error fetching USER files:", error);
     }
@@ -85,7 +83,6 @@ const App = ({ signOut, user }) => {
   };
 
   // COMMENTS
-
   const [location, setLocation] = useState("");
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);

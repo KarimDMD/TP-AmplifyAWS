@@ -1,11 +1,6 @@
 {
   "bucketName": "s3tripimages",
-  "selectedGuestPermissions": [
-    "s3:PutObject",
-    "s3:GetObject",
-    "s3:ListBucket",
-    "s3:DeleteObject"
-  ],
+  "selectedGuestPermissions": [],
   "selectedAuthenticatedPermissions": [
     "s3:PutObject",
     "s3:GetObject",
@@ -26,11 +21,11 @@
   "authPolicyName": "s3_amplify_f45e0a94",
   "unauthPolicyName": "s3_amplify_f45e0a94",
   "AuthenticatedAllowList": "ALLOW",
-  "GuestAllowList": "ALLOW",
+  "GuestAllowList": "DISALLOW",
   "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
   "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
   "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
   "s3PermissionsAuthenticatedUploads": "s3:PutObject",
-  "s3PermissionsGuestPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
-  "s3PermissionsGuestUploads": "s3:PutObject"
+  "s3PermissionsGuestPublic": "DISALLOW",
+  "s3PermissionsGuestUploads": "DISALLOW"
 }
