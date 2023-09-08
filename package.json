@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/datastore": "^4.7.1",
-    "@aws-amplify/ui-react": "^5.1.0",
+    "@aws-amplify/ui-react": "^5.0.7",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
