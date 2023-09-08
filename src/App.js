@@ -20,13 +20,14 @@ import Rating from "@mui/material/Rating";
 import { Delete as DeleteIcon } from "@mui/icons-material";
 Amplify.configure(awsExports);
 
-const BASE_S3_URL = `https://${awsExports.aws_user_files_s3_bucket}.s3.${awsExports.aws_user_files_s3_bucket_region}.amazonaws.com/private/eu-west-3%3Acbac72c4-89aa-456c-ab64-e713b9951a58/`;
 
 const App = ({ signOut, user }) => {
   // IMAGES
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [s3files, setS3files] = useState(null);
+  const [s3Urls, sets3Urls] = useState(null);
+
   const [showImageUpload, setShowImageUpload] = useState(false);
   const [imageButtonText, setImageButtonText] = useState("Ajouter une image");
 
@@ -34,6 +35,13 @@ const App = ({ signOut, user }) => {
     try {
       const userFiles = await Storage.list("", { level: "private" });
       setS3files(userFiles);
+      const filesUrl = []; 
+      for (const f of userFiles.results) {
+        console.log('f:', f);
+        const url = await Storage.get(f.key, { level: "private" });
+        filesUrl.push(url);
+      }
+      sets3Urls(filesUrl);
     } catch (error) {
       console.error("Error fetching USER files:", error);
     }
@@ -167,7 +175,7 @@ const App = ({ signOut, user }) => {
   useEffect(() => {
     fetchComments();
     fetchImages();
-  }, []);
+  }, [s3files]);
 
   return (
     <div>
@@ -177,16 +185,7 @@ const App = ({ signOut, user }) => {
             {user.attributes.email}
           </Typography>
           <div style={styles.grow} />
-          <Button
-            color="inherit"
-            onClick={() => {
-              fetchComments();
-              fetchImages();
-            }}
-            style={{ marginRight: "16px" }}
-          >
-            Actualiser
-          </Button>
+
           <Button color="inherit" onClick={signOut}>
             Sign out
           </Button>
@@ -239,12 +238,12 @@ const App = ({ signOut, user }) => {
             )}
             <Box mt={3}>
               <div style={styles.imageGrid}>
-                {s3files?.results?.map((file, index) => (
+                {s3Urls?.map((file, index) => (
                   <div key={index} style={styles.imageCard}>
                     <div style={styles.imageContainer}>
                       <img
-                        src={`${BASE_S3_URL}${file.key}`}
-                        alt={file.key}
+                        src={file}
+                        alt={file}
                         style={styles.galleryImage}
                       />
                       <Typography variant="subtitle2">{file.key}</Typography>
@@ -252,7 +251,7 @@ const App = ({ signOut, user }) => {
                         color="secondary"
                         aria-label="Supprimer"
                         style={styles.deleteIcon}
-                        onClick={() => handleDeleteImage(file.key)}
+                        onClick={() => handleDeleteImage(s3files.results[index].key)}
                       >
                         <DeleteIcon />
                       </IconButton>
